@@ -25,7 +25,7 @@ Python 3.6+
 
 ## Usage
 ```
-sbom_report.py [-h] -u WS_USER_KEY -k WS_TOKEN [-s SCOPE_TOKEN]
+sbom_report.py [-h] -u WS_USER_KEY -k WS_APIKEY [-s SCOPE_TOKEN]
                       [-a WS_URL] [-t {tv,json,xml,rdf,yaml}] [-e EXTRA]
                       [-o OUT_DIR]
 
@@ -35,7 +35,7 @@ optional arguments:
   -h, --help            show this help message and exit
   -u WS_USER_KEY, --userKey WS_USER_KEY
                         WS User Key
-  -k WS_TOKEN, --token WS_TOKEN
+  -k WS_APIKEY, --token WS_APIKEY
                         WS Organization Key
   -s SCOPE_TOKEN, --scope SCOPE_TOKEN
                         Scope token of SBOM report to generate
@@ -52,5 +52,11 @@ optional arguments:
 ## Execution
 Execution instructions:  
 ```
-python sbom_report.py -u <USER_KEY> -k <TOKEN> -s <SCOPE_TOKEN>
+python sbom_report.py -u <USER_KEY> -k <WS_APIKEY> -s <SCOPE_TOKEN>
+```
+
+### Pipeline Example
+```
+curl -LJO https://raw.githubusercontent.com/whitesource-ft/ws-examples/main/pipelineSBOM.sh
+chmod +x ./pipelineSBOM.sh && ./pipelineSBOM.sh
 ```
